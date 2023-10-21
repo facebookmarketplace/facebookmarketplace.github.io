@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js"></script>
+    <script src="script.js"></script>
+
+    <title>Facebook Marketplace Management System</title>
+</head>
+
+<body>
+    <h1>Facebook Marketplace Management System</h1>
+    <label>Row number : </label>
+    <input type="text" id="numrows">
+    <input type="file" id="excelFileInput" accept=".xlsx">
+    <button id="submitToExcel">Submit to Excel</button>
+    <div id="container"></div>
+    <script>
+        const excelFileInput = document.getElementById("excelFileInput");
+        const saveExcelButton = document.getElementById("submitToExcel");
+        const container = document.getElementById("container");
+        const specificColumnIndices = [0, 1, 2, 3, 4, 5, 6, 26, 27, 28, 29, 30, 32];
+        excelFileInput.addEventListener("change", handleFileUpload);
+        saveExcelButton.addEventListener("click", saveDataToExcel);
+        $(document).ready(function () {
+            $("#image-list").sortable();
+        });
+    </script>
+</body>
+
+</html>

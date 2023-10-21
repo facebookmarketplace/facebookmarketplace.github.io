@@ -1,0 +1,214 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f2f2f2; /* Background color for the entire page */
+    padding: 20px;
+    margin: 0; /* Remove default margin */
+}
+
+h1 {
+    color: #fff;
+    background-color: #107C41; /* Header background color */
+    padding: 20px;
+    margin: 0; /* Remove default margin */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between; /* Space out the containers */
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff; /* Container background color */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+}
+
+/* Left Side Styles */
+.left-half {
+    flex: 1;
+    padding: 20px;
+}
+
+.form-field {
+    margin-bottom: 15px; /* Add more spacing between form fields */
+}
+
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.input-field {
+    padding: 10px;
+}
+
+/* Right Side Styles */
+.right-half {
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Image List Styles */
+ul.sortable-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+ul.sortable-list .image-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 15px;
+    text-align: center;
+    width: calc(20% - 20px);
+    max-height: 200px;
+    box-sizing: border-box;
+}
+
+/* Set a fixed size for images within .image-item */
+ul.sortable-list .image-item img {
+    width: 100%;
+    height: 100%; /* Set both width and height to 100% to make all images the same size */
+    object-fit: cover; /* Maintain the aspect ratio and cover the container */
+    border-radius: 8px; /* Apply rounded corners */
+}
+
+
+/* Button Styles */
+button {
+    padding: 10px 20px;
+    background-color: #ffcc33;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #FF5733;
+}
+
+/* Modern Styling for Specific Elements */
+#submitToExcel {
+    background-color: #4CAF50;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* Additional CSS for Remove All Button */
+#checkAllButton {
+    background-color: #1e90ff;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#checkAllButton :hover {
+    background-color: #4169e1;
+}
+
+.custom-input {
+    width: 100%;
+  }
+
+
+ul.sortable-list .image-item button {
+    background-color: #FF5733; /* Modern red color */
+    color: #FFF; /* White text color */
+    border: none; /* Remove button border */
+    padding: 5px 10px; /* Add padding to the button */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 5px; /* Add rounded corners */
+}
+
+/* Additional styles for button hover effect */
+ul.sortable-list .image-item button:hover {
+    background-color: #D63022; /* Darker red on hover */
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #999; /* Customize the line color and style */
+    margin: 10px 0; /* Adjust the margin as needed */
+}
+.summary-section {
+    background-color: #f0f0f0;
+    padding: 10px;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: flex-start; /* Align items to the left */
+    justify-content: space-between; /* Space out the containers */
+    padding: 10px;
+    margin-bottom: 10px;
+    background-color: #fff; /* Container background color */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+  }
+  
+  .summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px; /* Add margin to separate items vertically */
+    background-color: #d0f0c0; /* Container background color */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
+    padding: 5px;
+  }
+  
+  .summary-checkbox {
+    margin-right: 10px; /* Add margin to separate checkbox from summary-item */
+    cursor: pointer;
+  }
+  
+  .summary-item {
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0;
+    margin: 0;
+  }
+  
+  
+  .add-button {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px 10px; /* Adjust padding for button size */
+    border: 1px solid #007bff; /* Add a border with a blue color */
+    border-radius: 5px; /* Add rounded corners */
+    background-color: #007bff; /* Set a background color */
+    color: #fff; /* Set text color to white */
+    margin-right: 5px;
+    display: inline-block;
+  }
+  
+  .add-button:hover {
+    background-color: #0056b3; /* Change background color on hover */
+    border: 1px solid #0056b3; /* Change border color on hover */
+  }
