@@ -12,7 +12,10 @@ h1 {
     background-color: #107C41; /* Header background color */
     padding: 20px;
     margin: 0; /* Remove default margin */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
 }
+
 
 .container {
     display: flex;
@@ -130,7 +133,7 @@ button:hover {
     margin-bottom: 10px;
 }
 
-#checkAllButton :hover {
+#checkAllButton:hover {
     background-color: #4169e1;
 }
 
@@ -140,7 +143,7 @@ button:hover {
 
 
 ul.sortable-list .image-item button {
-    background-color: #FF5733; /* Modern red color */
+    background-color: #fa8072; /* Modern red color */
     color: #FFF; /* White text color */
     border: none; /* Remove button border */
     padding: 5px 10px; /* Add padding to the button */
@@ -177,10 +180,16 @@ hr {
     justify-content: space-between;
     align-items: center;
     margin-bottom: 5px; /* Add margin to separate items vertically */
-    background-color: #d0f0c0; /* Container background color */
+    background-color: #fff; /* Container background color */
+    /*background-color: #d0f0c0; /* Container background color */
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
     padding: 5px;
+    border: 1px solid #D5D8DC;
+  }
+
+  .summary-row:hover {
+    background-color: #e8f4f8; /* Container background color */
   }
   
   .summary-checkbox {
@@ -190,7 +199,7 @@ hr {
   
   .summary-item {
     cursor: pointer;
-    text-decoration: underline;
+     /*text-decoration: underline;*/
     padding: 0;
     margin: 0;
   }

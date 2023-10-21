@@ -77,6 +77,14 @@ function handleFileUpload(event) {
         const newRowData = excelData[index]; // Get the data for the new row
         const newSummaryRow = document.createElement("div");
         newSummaryRow.classList.add("summary-row");
+        newSummaryRow.style.backgroundColor = "#d0f0c0";
+        newSummaryRow.addEventListener("mouseover", function () {
+          newSummaryRow.style.backgroundColor = "#e8f4f8";
+        });
+
+        newSummaryRow.addEventListener("mouseout", function () {
+          newSummaryRow.style.backgroundColor = "#d0f0c0";
+        });
         const newCheckbox = document.createElement("input");
         newCheckbox.type = "checkbox";
         newCheckbox.classList.add("summary-checkbox");
@@ -144,6 +152,7 @@ function handleFileUpload(event) {
       rightHalf.classList.add("right-half");
       const propertyForm = document.createElement("div");
       propertyForm.classList.add("propertyForm");
+
       specificColumnIndices.forEach((columnIndex) => {
         const formField = document.createElement("div");
         formField.classList.add("form-field");
