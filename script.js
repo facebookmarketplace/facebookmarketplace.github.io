@@ -2,9 +2,60 @@ $(document).ready(function () {
   $("#image-list").sortable();
   $("#image-list").disableSelection();
 });
+const toggleSwitch = document.getElementById("toggle-switch");
+const statusText = document.getElementById("status");
 
-function handleFileUpload(event) {
-  const file = event.target.files[0];
+toggleSwitch.addEventListener("change", () => {
+  if (toggleSwitch.checked) {
+    statusText.textContent = "On";
+    console.log(toggleSwitch.checked);
+  } else {
+    statusText.textContent = "Off";
+    console.log(toggleSwitch.checked);
+  }
+});
+
+const excelFileInput = document.getElementById("excelFileInput");
+const container = document.getElementById("container");
+const specificColumnIndices = [0, 1, 2, 3, 4, 5, 6, 26, 27, 28, 29, 32];
+const dropArea = document.querySelector(".drag-area");
+const dragText = document.querySelector(".header");
+let button = dropArea.querySelector(".button");
+let input = dropArea.querySelector("input");
+let file;
+button.onclick = () => {
+  input.click();
+};
+// when browse
+input.addEventListener("change", function () {
+  file = this.files[0];
+  handleFileUpload();
+  dropArea.classList.add("active");
+});
+// when file is inside drag area
+dropArea.addEventListener("dragover", (event) => {
+  event.preventDefault();
+  dropArea.classList.add("active");
+  dragText.textContent = "Release to Upload";
+  // console.log('File is inside the drag area');
+});
+// when file leave the drag area
+dropArea.addEventListener("dragleave", () => {
+  dropArea.classList.remove("active");
+  // console.log('File left the drag area');
+  dragText.textContent = "Drag & Drop";
+});
+// when file is dropped
+dropArea.addEventListener("drop", (event) => {
+  event.preventDefault();
+  // console.log('File is dropped in drag area');
+  file = event.dataTransfer.files[0]; // grab single file even of user selects multiple files
+  handleFileUpload();
+  // console.log(file);
+});
+
+function handleFileUpload() {
+  // const file = event.target.files[0];
   if (!file) {
     alert("No file selected");
     return;
@@ -40,10 +91,17 @@ function handleFileUpload(event) {
     const header = document.createElement("h2");
     header.textContent = "Summary List";
     summarySection.appendChild(header);
+    const buttonContainer = document.createElement("div");
+    buttonContainer.style.display = "flex"; // Set the container to flex display
 
     const checkAllButton = document.createElement("button");
     checkAllButton.id = "checkAllButton";
-    checkAllButton.textContent = "Check All";
+    checkAllButton.textContent = "Select All";
+
+    const saveButton = document.createElement("button");
+    saveButton.id = "saveButton";
+    saveButton.textContent = "Save Excel";
+    saveButton.addEventListener("click", saveDataToExcel);
 
     let isChecked = false;
 
@@ -57,8 +115,10 @@ function handleFileUpload(event) {
       // Update the isChecked flag
       isChecked = !isChecked;
     });
+    buttonContainer.appendChild(checkAllButton);
+    buttonContainer.appendChild(saveButton);
 
-    summarySection.appendChild(checkAllButton);
+    summarySection.appendChild(buttonContainer);
 
     excelData.forEach((rowData, index) => {
       // Create a div to hold the checkbox and summary-item
