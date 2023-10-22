@@ -2,18 +2,6 @@ $(document).ready(function () {
   $("#image-list").sortable();
   $("#image-list").disableSelection();
 });
-const toggleSwitch = document.getElementById("toggle-switch");
-const statusText = document.getElementById("status");
-
-toggleSwitch.addEventListener("change", () => {
-  if (toggleSwitch.checked) {
-    statusText.textContent = "On";
-    console.log(toggleSwitch.checked);
-  } else {
-    statusText.textContent = "Off";
-    console.log(toggleSwitch.checked);
-  }
-});
 
 const excelFileInput = document.getElementById("excelFileInput");
 const container = document.getElementById("container");
